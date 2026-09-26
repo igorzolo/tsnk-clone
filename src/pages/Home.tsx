@@ -1,9 +1,14 @@
+import Container from '../components/ui/Container';
+import SectionTitle from '../components/ui/SectionTitle';
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-brand-600">
-        Главная страница ТСНК
-      </h1>
-    </div>
+    <Container className="py-20">
+      <SectionTitle
+        title="Досмотровое оборудование ТСНК"
+        subtitle="Российский производитель систем безопасности для транспорта, промышленности и государственных объектов."
+        align="center"
+      />
+    </Container>
   );
 }
