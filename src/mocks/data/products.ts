@@ -8,7 +8,7 @@ export const products: Product[] = [
     category: 'introscope',
     shortDescription:
       'Рентгеновский досмотровый комплекс для багажа и ручной клади.',
-    image: 'https://placehold.co/600x400/1e3a8a/ffffff?text=TS-SCAN+6575',
+    image: '/images/products/ts-scan-6575.svg',  // для ТС-СКАН 6575
     features: ['Туннель 650×750 мм', 'До 1800 посылок/час', 'Двойное сканирование'],
   },
   {
@@ -18,7 +18,7 @@ export const products: Product[] = [
     category: 'detector',
     shortDescription:
       'Портативный детектор следов взрывчатых и наркотических веществ.',
-    image: 'https://placehold.co/600x400/1e3a8a/ffffff?text=M-ION',
+    image: '/images/products/m-ion.svg',         // для М-ИОН
     features: ['Время отклика < 8 сек', 'Автономная работа 6 часов', 'Запатентованная ИДТ'],
   },
   {
@@ -28,7 +28,7 @@ export const products: Product[] = [
     category: 'mobile',
     shortDescription:
       'Мобильный инспекционно-досмотровый комплекс для транспорта.',
-    image: 'https://placehold.co/600x400/1e3a8a/ffffff?text=MIDK+9032',
+    image: '/images/products/midk-9032.svg',     // для МИДК 9032
     features: ['Проникающая способность 300 мм', 'Сканирование на ходу', 'Монтаж на шасси'],
   },
   {
@@ -38,7 +38,7 @@ export const products: Product[] = [
     category: 'radar',
     shortDescription:
       'Радиолокационная система обнаружения скрытых объектов.',
-    image: 'https://placehold.co/600x400/1e3a8a/ffffff?text=Radar-IQ',
+    image: '/images/products/radar-iq.svg',      // для Radar-IQ
     features: ['Обнаружение на 30 м', 'Работа через стены', 'Интеграция с видеоаналитикой'],
   },
 ];

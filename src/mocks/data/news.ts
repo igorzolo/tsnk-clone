@@ -8,7 +8,7 @@ export const news: NewsItem[] = [
     excerpt:
       'Инженеры компании выпустили крупное обновление ПО для радиолокационной системы. Новая версия алгоритмов машинного обучения повышает точность обнаружения скрытых объектов.',
     date: '2026-03-15',
-    image: 'https://placehold.co/800x500/1e3a8a/ffffff?text=Radar-IQ',
+    image: '/images/news/placeholder.svg',
   },
   {
     id: '2',
@@ -17,7 +17,7 @@ export const news: NewsItem[] = [
     excerpt:
       'Мобильный комплекс получил все необходимые разрешения и рекомендован для оснащения региональных аэропортов России.',
     date: '2026-02-28',
-    image: 'https://placehold.co/800x500/1e3a8a/ffffff?text=MIDK+9032',
+    image: '/images/news/placeholder.svg',
   },
   {
     id: '3',
@@ -26,6 +26,6 @@ export const news: NewsItem[] = [
     excerpt:
       'Компания представит полную линейку досмотрового оборудования на международной выставке безопасности в Москве.',
     date: '2026-02-10',
-    image: 'https://placehold.co/800x500/1e3a8a/ffffff?text=Expo+2026',
+    image: '/images/news/placeholder.svg',
   },
 ];

@@ -21,7 +21,7 @@ export default function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Логотип */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex shrink-0 items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 font-bold text-white">
               Т
             </div>
@@ -37,14 +37,14 @@ export default function Header() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  cn(
-                    'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-                    isActive
-                      ? 'text-brand-600'
-                      : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900',
-                  )
-                }
-              >
+                    cn(
+                        'whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                        isActive
+                        ? 'text-brand-600'
+                        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900',
+                    )
+                    }
+                >
                 {item.label}
               </NavLink>
             ))}
