@@ -17,7 +17,8 @@ export type NewsItem = {
   slug: string;
   title: string;
   excerpt: string;
-  date: string; // ISO
+  content: string;   // добавь — полный текст новости
+  date: string;      // ISO
   image: string;
 };
 

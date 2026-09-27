@@ -13,13 +13,20 @@ export default function SectionTitle({
   align = 'left',
   className,
 }: SectionTitleProps) {
+  const centered = align === 'center';
+
   return (
-    <div className={cn(align === 'center' && 'text-center', className)}>
+    <div className={cn(centered && 'text-center', className)}>
       <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 max-w-2xl text-base text-slate-600 sm:text-lg">
+        <p
+          className={cn(
+            'mt-3 max-w-2xl text-base text-slate-600 sm:text-lg',
+            centered && 'mx-auto',
+          )}
+        >
           {subtitle}
         </p>
       )}
