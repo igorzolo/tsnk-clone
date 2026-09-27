@@ -7,6 +7,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
 import { Input, Textarea } from '../components/ui/Input';
 import { contactSchema, type ContactFormData } from '../lib/validators';
+import FadeIn from '../components/ui/FadeIn';
 
 const contacts = [
   {
@@ -59,7 +60,7 @@ export default function Contacts() {
 
       <div className="mt-12 grid gap-12 lg:grid-cols-5">
         {/* Левая колонка — контакты */}
-        <div className="lg:col-span-2">
+        <FadeIn className="lg:col-span-2">
           <div className="space-y-6">
             {contacts.map(({ icon: Icon, label, value, href }) => (
               <div key={label} className="flex gap-4">
@@ -106,10 +107,10 @@ export default function Contacts() {
               </div>
             </dl>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Правая колонка — форма */}
-        <div className="lg:col-span-3">
+        <FadeIn className="lg:col-span-3" delay={0.15}>
           <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
             {sent ? (
               <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
@@ -176,7 +177,7 @@ export default function Contacts() {
               </form>
             )}
           </div>
-        </div>
+        </FadeIn>
       </div>
     </Container>
   );

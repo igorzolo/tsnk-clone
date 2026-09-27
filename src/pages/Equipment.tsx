@@ -7,6 +7,7 @@ import FilterBar from '../components/FilterBar';
 import ProductCard from '../components/ProductCard';
 import { products } from '../mocks/data/products';
 import type { ProductCategory } from '../types';
+import FadeIn from '../components/ui/FadeIn';
 
 type Filter = ProductCategory | 'all';
 
@@ -62,8 +63,10 @@ export default function Equipment() {
 
       {filtered.length > 0 ? (
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filtered.map((p) => (
-            <ProductCard key={p.id} product={p} />
+          {filtered.map((p, index) => (
+            <FadeIn key={p.id} delay={index * 0.06}>
+              <ProductCard product={p} />
+            </FadeIn>
           ))}
         </div>
       ) : (

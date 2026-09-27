@@ -5,6 +5,7 @@ import SectionTitle from '../components/ui/SectionTitle';
 import NewsCard from '../components/NewsCard';
 import Pagination from '../components/Pagination';
 import { news } from '../mocks/data/news';
+import FadeIn from '../components/ui/FadeIn';
 
 const PAGE_SIZE = 3;
 
@@ -36,8 +37,10 @@ export default function News() {
       />
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {pageItems.map((n) => (
-          <NewsCard key={n.id} item={n} />
+        {pageItems.map((n, index) => (
+          <FadeIn key={n.id} delay={index * 0.08}>
+            <NewsCard item={n} />
+          </FadeIn>
         ))}
       </div>
 

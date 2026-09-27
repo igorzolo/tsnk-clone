@@ -3,6 +3,7 @@ import { Factory, Users, Award, Target, ShieldCheck, TrendingUp } from 'lucide-r
 import Container from '../components/ui/Container';
 import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
+import FadeIn from '../components/ui/FadeIn';
 
 const stats = [
   { value: '15+', label: 'лет на рынке' },
@@ -59,16 +60,18 @@ export default function About() {
       {/* Цифры */}
       <section>
         <Container className="py-12">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-4xl font-extrabold text-brand-600 sm:text-5xl">
-                  {s.value}
+          <FadeIn>
+            <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+              {stats.map((s) => (
+                <div key={s.label} className="text-center">
+                  <div className="text-4xl font-extrabold text-brand-600 sm:text-5xl">
+                    {s.value}
+                  </div>
+                  <div className="mt-2 text-sm text-slate-600">{s.label}</div>
                 </div>
-                <div className="mt-2 text-sm text-slate-600">{s.label}</div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </FadeIn>
         </Container>
       </section>
 
@@ -127,8 +130,8 @@ export default function About() {
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map(({ icon: Icon, title, text }) => (
-              <div
+            {values.map(({ icon: Icon, title, text }, index) => (
+              <FadeIn
                 key={title}
                 className="rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md"
               >
@@ -137,7 +140,7 @@ export default function About() {
                 </div>
                 <h3 className="mt-4 text-base font-bold text-slate-900">{title}</h3>
                 <p className="mt-2 text-sm text-slate-600">{text}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </Container>
@@ -186,20 +189,22 @@ export default function About() {
       {/* CTA */}
       <section>
         <Container className="py-16">
-          <div className="rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white px-8 py-14 text-center sm:px-16">
-            <Award className="mx-auto text-brand-600" size={40} />
-            <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
-              Обсудим ваш проект?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-slate-600">
-              Расскажите о задаче — подберём оборудование и рассчитаем стоимость.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Link to="/contacts">
-                <Button size="lg">Связаться с нами</Button>
-              </Link>
+          <FadeIn>
+            <div className="rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 to-white px-8 py-14 text-center sm:px-16">
+              <Award className="mx-auto text-brand-600" size={40} />
+              <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
+                Обсудим ваш проект?
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-slate-600">
+                Расскажите о задаче — подберём оборудование и рассчитаем стоимость.
+              </p>
+              <div className="mt-8 flex justify-center">
+                <Link to="/contacts">
+                  <Button size="lg">Связаться с нами</Button>
+                </Link>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </Container>
       </section>
     </>
