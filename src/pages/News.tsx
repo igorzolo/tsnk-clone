@@ -27,7 +27,6 @@ export default function News() {
     } else {
       setSearchParams({ page: String(page) });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

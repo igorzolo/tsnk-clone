@@ -136,15 +136,14 @@ export default function About() {
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ icon: Icon, title, text }, index) => (
-              <FadeIn
-                key={title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-600">
-                  <Icon size={22} />
+              <FadeIn key={title} delay={index * 0.08}>
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-600">
+                    <Icon size={22} />
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-slate-900">{title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{text}</p>
                 </div>
-                <h3 className="mt-4 text-base font-bold text-slate-900">{title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{text}</p>
               </FadeIn>
             ))}
           </div>
