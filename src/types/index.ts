@@ -6,8 +6,10 @@ export type Product = {
   name: string;
   category: ProductCategory;
   shortDescription: string;
+  fullDescription: string;
   image: string;
   features: string[];
+  specs: { label: string; value: string }[];
 };
 
 export type NewsItem = {
