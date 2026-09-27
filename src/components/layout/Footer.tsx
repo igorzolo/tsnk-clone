@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Компания</h3>
+            <h2 className="text-sm font-semibold text-slate-900">Компания</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li><a href="/about" className="hover:text-brand-600">О нас</a></li>
               <li><a href="/news" className="hover:text-brand-600">Новости</a></li>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Продукция</h3>
+            <h2 className="text-sm font-semibold text-slate-900">Продукция</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li><a href="/equipment" className="hover:text-brand-600">Интроскопы</a></li>
               <li><a href="/equipment" className="hover:text-brand-600">Детекторы</a></li>
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Контакты</h3>
+            <h2 className="text-sm font-semibold text-slate-900">Контакты</h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li>+7 (000) 000-00-00</li>
               <li>info@tsnk.ru</li>

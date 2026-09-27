@@ -17,7 +17,7 @@ export default function Home() {
         title="Досмотровое оборудование нового поколения"
         description="Российский производитель досмотрового оборудования: интроскопы, детекторы, мобильные комплексы, радиолокационные системы. Полный цикл производства."
       />
-      
+
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
         <Container className="py-20 sm:py-28">
@@ -80,7 +80,7 @@ export default function Home() {
                     <Icon size={22} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900">{title}</h3>
+                    <h2 className="font-semibold text-slate-900">{title}</h2>
                     <p className="mt-1 text-sm text-slate-600">{text}</p>
                   </div>
                 </div>
