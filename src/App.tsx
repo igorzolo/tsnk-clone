@@ -7,6 +7,7 @@ import ProductDetail from './pages/ProductDetail';
 import News from './pages/News';
 import Contacts from './pages/Contacts';
 import NotFound from './pages/NotFound';
+import NewsDetail from './pages/NewsDetail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/equipment/:slug" element={<ProductDetail />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news/:slug" element={<NewsDetail />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="*" element={<NotFound />} />
       </Route>

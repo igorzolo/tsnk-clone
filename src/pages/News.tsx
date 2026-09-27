@@ -1,3 +1,51 @@
+import { useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import Container from '../components/ui/Container';
+import SectionTitle from '../components/ui/SectionTitle';
+import NewsCard from '../components/NewsCard';
+import Pagination from '../components/Pagination';
+import { news } from '../mocks/data/news';
+
+const PAGE_SIZE = 3;
+
 export default function News() {
-  return <div className="py-20 text-center text-2xl">Новости</div>;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageParam = Number(searchParams.get('page') ?? '1');
+  const totalPages = Math.ceil(news.length / PAGE_SIZE);
+  const currentPage = pageParam >= 1 && pageParam <= totalPages ? pageParam : 1;
+
+  const pageItems = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return news.slice(start, start + PAGE_SIZE);
+  }, [currentPage]);
+
+  const handlePageChange = (page: number) => {
+    if (page === 1) {
+      setSearchParams({});
+    } else {
+      setSearchParams({ page: String(page) });
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <Container className="py-12 sm:py-16">
+      <SectionTitle
+        title="Новости"
+        subtitle="Что нового происходит в компании и отрасли."
+      />
+
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {pageItems.map((n) => (
+          <NewsCard key={n.id} item={n} />
+        ))}
+      </div>
+
+      <Pagination
+        current={currentPage}
+        total={totalPages}
+        onChange={handlePageChange}
+      />
+    </Container>
+  );
 }
