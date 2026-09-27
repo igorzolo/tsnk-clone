@@ -8,10 +8,16 @@ import NewsCard from '../components/NewsCard';
 import { products } from '../mocks/data/products';
 import { news } from '../mocks/data/news';
 import FadeIn from '../components/ui/FadeIn';
+import Seo from '../components/Seo';
 
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Досмотровое оборудование нового поколения"
+        description="Российский производитель досмотрового оборудования: интроскопы, детекторы, мобильные комплексы, радиолокационные системы. Полный цикл производства."
+      />
+      
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
         <Container className="py-20 sm:py-28">
@@ -163,3 +169,4 @@ export default function Home() {
     </>
   );
 }
+

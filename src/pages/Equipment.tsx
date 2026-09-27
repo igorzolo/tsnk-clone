@@ -8,6 +8,7 @@ import ProductCard from '../components/ProductCard';
 import { products } from '../mocks/data/products';
 import type { ProductCategory } from '../types';
 import FadeIn from '../components/ui/FadeIn';
+import Seo from '../components/Seo';
 
 type Filter = ProductCategory | 'all';
 
@@ -47,39 +48,45 @@ export default function Equipment() {
   };
 
   return (
-    <Container className="py-12 sm:py-16">
-      <SectionTitle
-        title="Оборудование"
-        subtitle="Полная линейка досмотровых систем для транспорта, промышленности и государственных объектов."
+    <>
+      <Seo
+        title="Каталог оборудования"
+        description="Полная линейка досмотровых систем: интроскопы, детекторы следов, мобильные комплексы, радары. Подбор под задачу, поставка по всей России."
       />
+      <Container className="py-12 sm:py-16">
+        <SectionTitle
+          title="Оборудование"
+          subtitle="Полная линейка досмотровых систем для транспорта, промышленности и государственных объектов."
+        />
 
-      <div className="mt-8">
-        <FilterBar active={active} onChange={handleChange} counts={counts} />
-      </div>
-
-      <p className="mt-6 text-sm text-slate-500">
-        Найдено: <span className="font-semibold text-slate-900">{filtered.length}</span>
-      </p>
-
-      {filtered.length > 0 ? (
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filtered.map((p, index) => (
-            <FadeIn key={p.id} delay={index * 0.06}>
-              <ProductCard product={p} />
-            </FadeIn>
-          ))}
+        <div className="mt-8">
+          <FilterBar active={active} onChange={handleChange} counts={counts} />
         </div>
-      ) : (
-        <div className="mt-16 flex flex-col items-center justify-center gap-3 text-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 text-slate-400">
-            <SearchX size={26} />
+
+        <p className="mt-6 text-sm text-slate-500">
+          Найдено: <span className="font-semibold text-slate-900">{filtered.length}</span>
+        </p>
+
+        {filtered.length > 0 ? (
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {filtered.map((p, index) => (
+              <FadeIn key={p.id} delay={index * 0.06}>
+                <ProductCard product={p} />
+              </FadeIn>
+            ))}
           </div>
-          <h3 className="text-lg font-semibold text-slate-900">Ничего не найдено</h3>
-          <p className="max-w-sm text-sm text-slate-500">
-            Попробуйте выбрать другую категорию или сбросить фильтр.
-          </p>
-        </div>
-      )}
-    </Container>
+        ) : (
+          <div className="mt-16 flex flex-col items-center justify-center gap-3 text-center">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+              <SearchX size={26} />
+            </div>
+            <h3 className="text-lg font-semibold text-slate-900">Ничего не найдено</h3>
+            <p className="max-w-sm text-sm text-slate-500">
+              Попробуйте выбрать другую категорию или сбросить фильтр.
+            </p>
+          </div>
+        )}
+      </Container>
+    </>
   );
 }

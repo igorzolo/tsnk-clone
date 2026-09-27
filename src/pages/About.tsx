@@ -4,6 +4,7 @@ import Container from '../components/ui/Container';
 import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
 import FadeIn from '../components/ui/FadeIn';
+import Seo from '../components/Seo';
 
 const stats = [
   { value: '15+', label: 'лет на рынке' },
@@ -38,6 +39,10 @@ const values = [
 export default function About() {
   return (
     <>
+      <Seo
+        title="О компании"
+        description="ТСНК — российский производитель систем безопасности. 15 лет на рынке, 500+ установленных комплексов, полный цикл производства."
+      />
       {/* Hero */}
       <section className="border-b border-slate-100 bg-gradient-to-b from-brand-50 to-white">
         <Container className="py-16 sm:py-20">

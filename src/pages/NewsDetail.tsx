@@ -4,6 +4,7 @@ import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { news } from '../mocks/data/news';
+import Seo from '../components/Seo';
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('ru-RU', {
@@ -20,6 +21,7 @@ export default function NewsDetail() {
   if (!item) {
     return (
       <Container className="py-20">
+        <Seo title="Новость не найдена" />
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <h1 className="text-3xl font-bold text-slate-900">Новость не найдена</h1>
           <p className="text-slate-500">
@@ -37,11 +39,15 @@ export default function NewsDetail() {
 
   return (
     <Container className="py-8 sm:py-12">
-      <Breadcrumbs
-        items={[
-          { label: 'Главная', to: '/' },
-          { label: 'Новости', to: '/news' },
-          { label: item.title },
+        <Seo
+            title={item.title}
+            description={item.excerpt}
+        />
+        <Breadcrumbs
+            items={[
+            { label: 'Главная', to: '/' },
+            { label: 'Новости', to: '/news' },
+            { label: item.title },
         ]}
       />
 
