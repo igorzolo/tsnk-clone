@@ -1,75 +1,103 @@
-# React + TypeScript + Vite
+# ТСНК — клон сайта досмотрового оборудования
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Учебный проект: современный редизайн корпоративного сайта производителя досмотрового оборудования [tsnk.ru](https://tsnk.ru). Реализован с нуля на React + TypeScript + Tailwind.
 
-Currently, two official plugins are available:
+> **Дисклеймер:** проект создан исключительно в учебных целях. Все права на оригинальный контент, бренд и товарные знаки принадлежат ООО «Диагностика-М».
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Демо
 
-## React Compiler
+**[tsnk-nu.vercel.app](https://tsnk-nu.vercel.app)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📸 Скриншоты
 
-## Expanding the ESLint configuration
+| Главная | Каталог |
+|---|---|
+| ![Главная](./docs/home.png) | ![Каталог](./docs/equipment.png) |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Продукт | Новости |
+|---|---|
+| ![Продукт](./docs/product.png) | ![Новости](./docs/news.png) |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Что реализовано
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Главная** — hero-секция, преимущества, витрины продуктов и новостей, CTA-блок
+- **Каталог оборудования** — фильтрация по 4 категориям с синхронизацией в URL (`?category=introscope`)
+- **Страница продукта** — динамический роут `/equipment/:slug`, характеристики, ключевые особенности, похожие товары
+- **Новости** — список с пагинацией через URL (`?page=2`), детальная страница `/news/:slug`
+- **Контакты** — форма с валидацией (react-hook-form + zod), состояние успешной отправки, мок-отправка
+- **О компании** — история, миссия, цифры, ценности
+- **404** — кастомные страницы для общих путей и несуществующих продуктов/новостей
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Стек
 
+| Слой | Технологии |
+|---|---|
+| Сборка | Vite |
+| Язык | TypeScript |
+| UI | React 18 |
+| Роутинг | React Router v6 |
+| Стили | Tailwind CSS |
+| Формы | react-hook-form + zod |
+| Анимации | Framer Motion |
+| Иконки | Lucide React |
+| SEO | react-helmet-async |
+| Хостинг | Vercel |
+
+## 🚀 Запуск локально
+
+```bash
+# Клонировать
+git clone https://github.com/igorzolo/tsnk-clone.git
+cd tsnk-clone
+
+# Установить зависимости
+npm install
+
+# Запустить dev-сервер
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Приложение откроется на http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Сборка
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+```
+
+Готовый бандл окажется в `dist/`. Проект использует code-splitting — каждая страница грузится отдельным чанком.
+
+## 🏗 Структура проекта
 
 ```
+src/
+├── components/
+│   ├── ui/              # Базовые компоненты (Button, Input, Container, FadeIn)
+│   ├── layout/          # Header, Footer, Layout
+│   ├── ProductCard.tsx  # Карточка продукта
+│   ├── NewsCard.tsx     # Карточка новости
+│   ├── FilterBar.tsx    # Фильтры категорий
+│   ├── Pagination.tsx   # Пагинация
+│   ├── Breadcrumbs.tsx  # Хлебные крошки
+│   ├── ScrollToTop.tsx  # Кнопка «Наверх»
+│   ├── ScrollRestoration.tsx
+│   └── Seo.tsx          # Управление метатегами
+├── pages/               # Страницы (Home, About, Equipment, News, Contacts, ...)
+├── mocks/data/          # Мок-данные продуктов и новостей
+├── types/               # TypeScript-типы
+├── lib/                 # Утилиты и валидаторы
+└── main.tsx
+```
+
+## 🎯 Что можно улучшить
+
+- [ ] Заменить моки на реальный API (MSW → Express/FastAPI)
+- [ ] Добавить авторизацию и личный кабинет
+- [ ] Подключить CMS для управления контентом
+- [ ] Добавить страницу поиска
+- [ ] Многоязычность (i18n)
+- [ ] E2E-тесты (Playwright)
+
+## 📄 Лицензия
+
+Проект носит образовательный характер. Код можно свободно использовать в учебных целях.
