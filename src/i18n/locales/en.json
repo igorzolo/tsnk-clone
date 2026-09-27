@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "equipment": "Equipment",
+    "news": "News",
+    "contacts": "Contacts"
+  },
+  "common": {
+    "contact": "Contact us",
+    "learnMore": "Learn more",
+    "viewAll": "Full catalog",
+    "allNews": "All news",
+    "backToCatalog": "Back to catalog",
+    "allCatalog": "All news"
+  },
+  "footer": {
+    "tagline": "Russian manufacturer of inspection equipment.",
+    "company": "Company",
+    "companyAbout": "About us",
+    "companyNews": "News",
+    "companyContacts": "Contacts",
+    "products": "Products",
+    "productsIntroscopes": "X-ray scanners",
+    "productsDetectors": "Detectors",
+    "productsMobile": "Mobile complexes",
+    "contacts": "Contacts",
+    "copyright": "© {{year}} TSNK. Educational clone. All rights to the original belong to LLC «Diagnostika-M»."
+  },
+  "language": {
+    "ru": "Рус",
+    "en": "Eng"
+  }
+}

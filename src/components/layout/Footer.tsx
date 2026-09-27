@@ -1,6 +1,10 @@
 import Container from '../ui/Container';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
+
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
       <Container>
@@ -12,31 +16,35 @@ export default function Footer() {
               </div>
               <span className="font-bold text-slate-900">ТСНК</span>
             </div>
-            <p className="mt-3 text-sm text-slate-600">
-              Российский производитель досмотрового оборудования.
-            </p>
+            <p className="mt-3 text-sm text-slate-600">{t('footer.tagline')}</p>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">Компания</h2>
+            <h2 className="text-sm font-semibold text-slate-900">
+              {t('footer.company')}
+            </h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
-              <li><a href="/about" className="hover:text-brand-600">О нас</a></li>
-              <li><a href="/news" className="hover:text-brand-600">Новости</a></li>
-              <li><a href="/contacts" className="hover:text-brand-600">Контакты</a></li>
+              <li><a href="/about" className="hover:text-brand-600">{t('footer.companyAbout')}</a></li>
+              <li><a href="/news" className="hover:text-brand-600">{t('footer.companyNews')}</a></li>
+              <li><a href="/contacts" className="hover:text-brand-600">{t('footer.companyContacts')}</a></li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">Продукция</h2>
+            <h2 className="text-sm font-semibold text-slate-900">
+              {t('footer.products')}
+            </h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
-              <li><a href="/equipment" className="hover:text-brand-600">Интроскопы</a></li>
-              <li><a href="/equipment" className="hover:text-brand-600">Детекторы</a></li>
-              <li><a href="/equipment" className="hover:text-brand-600">Мобильные комплексы</a></li>
+              <li><a href="/equipment" className="hover:text-brand-600">{t('footer.productsIntroscopes')}</a></li>
+              <li><a href="/equipment" className="hover:text-brand-600">{t('footer.productsDetectors')}</a></li>
+              <li><a href="/equipment" className="hover:text-brand-600">{t('footer.productsMobile')}</a></li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold text-slate-900">Контакты</h2>
+            <h2 className="text-sm font-semibold text-slate-900">
+              {t('footer.contacts')}
+            </h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li>+7 (000) 000-00-00</li>
               <li>info@tsnk.ru</li>
@@ -46,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} ТСНК. Учебный клон. Все права на оригинал принадлежат ООО «Диагностика-М».
+          {t('footer.copyright', { year })}
         </div>
       </Container>
     </footer>

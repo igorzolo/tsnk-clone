@@ -4,16 +4,19 @@ import { Menu, X, Phone } from 'lucide-react';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import { cn } from '../../lib/cn';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const navItems = [
-  { to: '/', label: 'Главная' },
-  { to: '/about', label: 'О компании' },
-  { to: '/equipment', label: 'Оборудование' },
-  { to: '/news', label: 'Новости' },
-  { to: '/contacts', label: 'Контакты' },
+  { to: '/', key: 'nav.home' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/equipment', key: 'nav.equipment' },
+  { to: '/news', key: 'nav.news' },
+  { to: '/contacts', key: 'nav.contacts' },
 ];
 
 export default function Header() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   return (
@@ -45,7 +48,7 @@ export default function Header() {
                     )
                     }
                 >
-                {item.label}
+                {t(item.key)}
               </NavLink>
             ))}
           </nav>
@@ -59,7 +62,8 @@ export default function Header() {
               <Phone size={16} />
               +7 (000) 000-00-00
             </a>
-            <Button size="sm">Связаться</Button>
+            <LanguageSwitcher />
+            <Button size="sm">{t('common.contact')}</Button>
           </div>
 
           {/* Бургер — mobile */}
@@ -89,7 +93,7 @@ export default function Header() {
                   )
                 }
               >
-                {item.label}
+                {t(item.key)}
               </NavLink>
             ))}
             <Button size="sm" className="mt-2 w-full">

@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Главная",
+    "about": "О компании",
+    "equipment": "Оборудование",
+    "news": "Новости",
+    "contacts": "Контакты"
+  },
+  "common": {
+    "contact": "Связаться",
+    "learnMore": "Подробнее",
+    "viewAll": "Весь каталог",
+    "allNews": "Все новости",
+    "backToCatalog": "В каталог",
+    "allCatalog": "Все новости"
+  },
+  "footer": {
+    "tagline": "Российский производитель досмотрового оборудования.",
+    "company": "Компания",
+    "companyAbout": "О нас",
+    "companyNews": "Новости",
+    "companyContacts": "Контакты",
+    "products": "Продукция",
+    "productsIntroscopes": "Интроскопы",
+    "productsDetectors": "Детекторы",
+    "productsMobile": "Мобильные комплексы",
+    "contacts": "Контакты",
+    "copyright": "© {{year}} ТСНК. Учебный клон. Все права на оригинал принадлежат ООО «Диагностика-М»."
+  },
+  "language": {
+    "ru": "Рус",
+    "en": "Eng"
+  }
+}
