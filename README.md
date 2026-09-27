@@ -12,11 +12,11 @@
 
 | Главная | Каталог |
 |---|---|
-| ![Главная](./docs/home.png) | ![Каталог](./docs/equipment.png) |
+| ![Главная](./docs/home.webp) | ![Каталог](./docs/equipment.webp) |
 
 | Продукт | Новости |
 |---|---|
-| ![Продукт](./docs/product.png) | ![Новости](./docs/news.png) |
+| ![Продукт](./docs/product.webp) | ![Новости](./docs/news.webp) |
 
 ## ✨ Что реализовано
 
