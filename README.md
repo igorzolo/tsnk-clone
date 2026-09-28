@@ -32,7 +32,7 @@
 
 Lighthouse на проде (mobile):
 
-- ⚡ Performance — **92**
+- ⚡ Performance — **97**
 - ♿ Accessibility — **100**
 - ✅ Best Practices — **100**
 - 🔍 SEO — **100**

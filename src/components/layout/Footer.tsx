@@ -1,5 +1,6 @@
 import Container from '../ui/Container';
 import { useTranslation } from 'react-i18next';
+import Logo from '../ui/Logo';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -10,12 +11,7 @@ export default function Footer() {
       <Container>
         <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">
-                Т
-              </div>
-              <span className="font-bold text-slate-900">ТСНК</span>
-            </div>
+            <Logo />
             <p className="mt-3 text-sm text-slate-600">{t('footer.tagline')}</p>
           </div>
 

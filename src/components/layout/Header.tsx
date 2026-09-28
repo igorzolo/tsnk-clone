@@ -6,6 +6,7 @@ import Button from '../ui/Button';
 import { cn } from '../../lib/cn';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher';
+import Logo from '../ui/Logo';
 
 const navItems = [
   { to: '/', key: 'nav.home' },
@@ -24,14 +25,7 @@ export default function Header() {
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Логотип */}
-          <Link to="/" className="flex shrink-0 items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 font-bold text-white">
-              Т
-            </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">
-              ТСНК
-            </span>
-          </Link>
+          <Logo />
 
           {/* Навигация — desktop */}
           <nav className="hidden items-center gap-1 md:flex">
