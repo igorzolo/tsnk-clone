@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 import ProductCard from '../components/ProductCard';
 import NewsCard from '../components/NewsCard';
 import { useProducts } from '../hooks/useProducts';
-import { news } from '../mocks/data/news';
+import { useNews } from '../hooks/useNews';
 import FadeIn from '../components/ui/FadeIn';
 import Seo from '../components/Seo';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 export default function Home() {
   const products = useProducts();
   const { t } = useTranslation();
+  const news = useNews();
 
   return (
     <>
@@ -138,7 +139,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {news.map((n, i) => (
+              {news.slice(0, 3).map((n, i) => (
                 <FadeIn key={n.id} delay={i * 0.08}>
                   <NewsCard item={n} />
                 </FadeIn>

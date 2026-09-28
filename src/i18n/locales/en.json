@@ -80,5 +80,15 @@
     "seo": {
     "siteName": "TSNK",
     "defaultDescription": "Russian manufacturer of inspection equipment. Security systems for transport, industry and government facilities."
+    },
+    "news": {
+    "title": "News",
+    "subtitle": "What's new in the company and the industry.",
+    "notFound": "News not found",
+    "notFoundText": "The link may be outdated or the news item was removed.",
+    "breadcrumbHome": "Home",
+    "breadcrumbNews": "News",
+    "backToNews": "All news",
+    "contactUs": "Contact us"
     }
 }

@@ -1,59 +1,96 @@
-import { useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import Container from '../components/ui/Container';
-import SectionTitle from '../components/ui/SectionTitle';
-import NewsCard from '../components/NewsCard';
-import Pagination from '../components/Pagination';
-import { news } from '../mocks/data/news';
-import FadeIn from '../components/ui/FadeIn';
+import Button from '../components/ui/Button';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Seo from '../components/Seo';
+import { useNews } from '../hooks/useNews';
 
-const PAGE_SIZE = 3;
+export default function NewsDetail() {
+  const { t, i18n } = useTranslation();
+  const news = useNews();
+  const { slug } = useParams<{ slug: string }>();
+  const item = news.find((n) => n.slug === slug);
 
-export default function News() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const pageParam = Number(searchParams.get('page') ?? '1');
-  const totalPages = Math.ceil(news.length / PAGE_SIZE);
-  const currentPage = pageParam >= 1 && pageParam <= totalPages ? pageParam : 1;
+  const locale = i18n.resolvedLanguage?.startsWith('en') ? 'en-US' : 'ru-RU';
 
-  const pageItems = useMemo(() => {
-    const start = (currentPage - 1) * PAGE_SIZE;
-    return news.slice(start, start + PAGE_SIZE);
-  }, [currentPage]);
+  if (!item) {
+    return (
+      <>
+        <Seo title={t('news.notFound')} />
+        <Container className="py-20">
+          <div className="flex flex-col items-center justify-center gap-4 text-center">
+            <h1 className="text-3xl font-bold text-slate-900">
+              {t('news.notFound')}
+            </h1>
+            <p className="text-slate-500">{t('news.notFoundText')}</p>
+            <Link to="/news">
+              <Button variant="outline">
+                <ArrowLeft size={16} /> {t('news.backToNews')}
+              </Button>
+            </Link>
+          </div>
+        </Container>
+      </>
+    );
+  }
 
-  const handlePageChange = (page: number) => {
-    if (page === 1) {
-      setSearchParams({});
-    } else {
-      setSearchParams({ page: String(page) });
-    }
-  };
+  const formatted = new Date(item.date).toLocaleDateString(locale, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
 
   return (
     <>
-      <Seo
-        title="Новости компании"
-        description="Что нового происходит в ТСНК и отрасли досмотрового оборудования: обновления продуктов, выставки, партнёрства."
-      />
-      <Container className="py-12 sm:py-16">
-        <SectionTitle
-          title="Новости"
-          subtitle="Что нового происходит в компании и отрасли."
+      <Seo title={item.title} description={item.excerpt} />
+      <Container className="py-8 sm:py-12">
+        <Breadcrumbs
+          items={[
+            { label: t('news.breadcrumbHome'), to: '/' },
+            { label: t('news.breadcrumbNews'), to: '/news' },
+            { label: item.title },
+          ]}
         />
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {pageItems.map((n, index) => (
-            <FadeIn key={n.id} delay={index * 0.08}>
-              <NewsCard item={n} />
-            </FadeIn>
-          ))}
-        </div>
+        <article className="mx-auto mt-8 max-w-3xl">
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <Calendar size={14} />
+            <time>{formatted}</time>
+          </div>
 
-        <Pagination
-          current={currentPage}
-          total={totalPages}
-          onChange={handlePageChange}
-        />
+          <h1 className="mt-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+            {item.title}
+          </h1>
+
+          <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="aspect-[16/9] w-full object-cover"
+            />
+          </div>
+
+          <div className="mt-8">
+            {item.content.split('\n\n').map((paragraph, i) => (
+              <p key={i} className="mb-4 text-base leading-relaxed text-slate-700">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-wrap gap-3">
+            <Link to="/news">
+              <Button variant="outline">
+                <ArrowLeft size={16} /> {t('news.backToNews')}
+              </Button>
+            </Link>
+            <Link to="/contacts">
+              <Button>{t('news.contactUs')}</Button>
+            </Link>
+          </div>
+        </article>
       </Container>
     </>
   );
