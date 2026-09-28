@@ -90,5 +90,42 @@
     "breadcrumbNews": "News",
     "backToNews": "All news",
     "contactUs": "Contact us"
+    },
+    "contacts": {
+    "title": "Contact us",
+    "subtitle": "We'll answer your questions, calculate the cost, and help you choose equipment.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "addressLabel": "Address",
+    "address": "Moscow, Primernaya st., 1",
+    "scheduleTitle": "Opening hours",
+    "scheduleWeekdays": "Mon–Fri",
+    "scheduleSaturday": "Sat",
+    "scheduleSunday": "Sun",
+    "scheduleDayOff": "closed",
+    "form": {
+        "name": "Your name",
+        "namePlaceholder": "John Smith",
+        "email": "Email",
+        "emailPlaceholder": "john@example.com",
+        "phone": "Phone",
+        "phonePlaceholder": "+1 (___) ___-__-__",
+        "message": "Message",
+        "messagePlaceholder": "Tell us which equipment you're interested in…",
+        "submit": "Send request",
+        "submitting": "Sending…",
+        "legal": "By clicking the button, you agree to the processing of personal data.",
+        "successTitle": "Request sent",
+        "successText": "We've received your message and will contact you within one business day.",
+        "sendAnother": "Send another"
+    },
+    "errors": {
+        "nameMin": "Name must be at least 2 characters",
+        "nameMax": "Name is too long",
+        "emailInvalid": "Invalid email",
+        "phoneInvalid": "Invalid phone number",
+        "messageMin": "Message must be at least 10 characters",
+        "messageMax": "Message is too long"
+    }
     }
 }

@@ -101,5 +101,42 @@
     "breadcrumbNews": "Новости",
     "backToNews": "Все новости",
     "contactUs": "Связаться с нами"
+    },
+    "contacts": {
+    "title": "Свяжитесь с нами",
+    "subtitle": "Ответим на вопросы, рассчитаем стоимость и поможем с выбором оборудования.",
+    "phoneLabel": "Телефон",
+    "emailLabel": "Email",
+    "addressLabel": "Адрес",
+    "address": "Москва, ул. Примерная, 1",
+    "scheduleTitle": "Режим работы",
+    "scheduleWeekdays": "Пн–Пт",
+    "scheduleSaturday": "Сб",
+    "scheduleSunday": "Вс",
+    "scheduleDayOff": "выходной",
+    "form": {
+        "name": "Ваше имя",
+        "namePlaceholder": "Иван Иванов",
+        "email": "Email",
+        "emailPlaceholder": "ivan@example.com",
+        "phone": "Телефон",
+        "phonePlaceholder": "+7 (___) ___-__-__",
+        "message": "Сообщение",
+        "messagePlaceholder": "Расскажите, какое оборудование вас интересует…",
+        "submit": "Отправить заявку",
+        "submitting": "Отправляем…",
+        "legal": "Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.",
+        "successTitle": "Заявка отправлена",
+        "successText": "Мы получили ваше сообщение и свяжемся с вами в течение рабочего дня.",
+        "sendAnother": "Отправить ещё одну"
+    },
+    "errors": {
+        "nameMin": "Имя должно содержать минимум 2 символа",
+        "nameMax": "Слишком длинное имя",
+        "emailInvalid": "Некорректный email",
+        "phoneInvalid": "Некорректный телефон",
+        "messageMin": "Сообщение должно содержать минимум 10 символов",
+        "messageMax": "Сообщение слишком длинное"
+    }
     }
 }
