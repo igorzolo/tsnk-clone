@@ -97,7 +97,7 @@ export default function Header() {
               </NavLink>
             ))}
             <Button size="sm" className="mt-2 w-full">
-              Связаться
+              {t('common.contact')}
             </Button>
           </nav>
         )}

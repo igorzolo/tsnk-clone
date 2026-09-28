@@ -21,10 +21,3 @@ export type NewsItem = {
   date: string;      // ISO
   image: string;
 };
-
-export const CATEGORY_LABELS: Record<ProductCategory, string> = {
-  introscope: 'Интроскопы',
-  detector: 'Детекторы',
-  mobile: 'Мобильные комплексы',
-  radar: 'Радары',
-};

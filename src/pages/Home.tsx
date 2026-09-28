@@ -5,17 +5,21 @@ import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
 import ProductCard from '../components/ProductCard';
 import NewsCard from '../components/NewsCard';
-import { products } from '../mocks/data/products';
+import { useProducts } from '../hooks/useProducts';
 import { news } from '../mocks/data/news';
 import FadeIn from '../components/ui/FadeIn';
 import Seo from '../components/Seo';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+  const products = useProducts();
+  const { t } = useTranslation();
+
   return (
     <>
       <Seo
-        title="Досмотровое оборудование нового поколения"
-        description="Российский производитель досмотрового оборудования: интроскопы, детекторы, мобильные комплексы, радиолокационные системы. Полный цикл производства."
+        title={t('home.hero.titleLine1')}
+        description={t('home.hero.subtitle')}
       />
 
       {/* HERO */}
@@ -25,26 +29,24 @@ export default function Home() {
             <div className="mx-auto max-w-3xl text-center">
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-medium text-brand-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-                Российское производство
+                {t('home.hero.badge')}
               </span>
               <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                Досмотровое оборудование{' '}
-                <span className="text-brand-600">нового поколения</span>
+                {t('home.hero.titleLine1')}{' '}
+                <span className="text-brand-600">{t('home.hero.titleLine2')}</span>
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-                Системы безопасности для транспорта, промышленности и государственных
-                объектов. Собственные разработки, полный цикл производства, сервис по всей
-                России.
+                {t('home.hero.subtitle')}
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <Link to="/equipment">
                   <Button size="lg">
-                    Каталог оборудования <ArrowRight size={18} />
+                    {t('home.hero.ctaPrimary')} <ArrowRight size={18} />
                   </Button>
                 </Link>
                 <Link to="/contacts">
                   <Button size="lg" variant="outline">
-                    Связаться с нами
+                    {t('home.hero.ctaSecondary')}
                   </Button>
                 </Link>
               </div>
@@ -61,18 +63,18 @@ export default function Home() {
               {[
                 {
                   icon: ShieldCheck,
-                  title: 'Собственное производство',
-                  text: 'Полный цикл разработки и сборки в России.',
+                  title: t('home.advantages.productionTitle'),
+                  text: t('home.advantages.productionText'),
                 },
                 {
                   icon: Zap,
-                  title: 'Современные технологии',
-                  text: 'ИИ, машинное обучение, цифровая обработка сигналов.',
+                  title: t('home.advantages.techTitle'),
+                  text: t('home.advantages.techText'),
                 },
                 {
                   icon: Award,
-                  title: 'Сертификация',
-                  text: 'Соответствие международным стандартам безопасности.',
+                  title: t('home.advantages.certTitle'),
+                  text: t('home.advantages.certText'),
                 },
               ].map(({ icon: Icon, title, text }) => (
                 <div key={title} className="flex gap-4">
@@ -96,14 +98,14 @@ export default function Home() {
           <FadeIn>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <SectionTitle
-                title="Оборудование"
-                subtitle="Полная линейка досмотровых систем для любых задач."
+                title={t('home.equipment.title')}
+                subtitle={t('home.equipment.subtitle')}
               />
               <Link
                 to="/equipment"
                 className="inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:gap-2 transition-all"
               >
-                Весь каталог <ArrowRight size={14} />
+                {t('common.viewAll')} <ArrowRight size={14} />
               </Link>
             </div>
 
@@ -124,14 +126,14 @@ export default function Home() {
           <FadeIn>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <SectionTitle
-                title="Новости"
-                subtitle="Что нового происходит в компании и отрасли."
+                title={t('home.news.title')}
+                subtitle={t('home.news.subtitle')}
               />
               <Link
                 to="/news"
                 className="inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:gap-2 transition-all"
               >
-                Все новости <ArrowRight size={14} />
+                {t('common.allNews')} <ArrowRight size={14} />
               </Link>
             </div>
 
@@ -152,14 +154,14 @@ export default function Home() {
           <FadeIn>
             <div className="rounded-3xl bg-slate-900 px-8 py-16 text-center sm:px-16">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                Нужна консультация?
+                {t('home.cta.title')}
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-slate-300">
-                Подберём оборудование под ваши задачи и рассчитаем стоимость поставки.
+                {t('home.cta.subtitle')}
               </p>
               <div className="mt-8 flex justify-center">
                 <Link to="/contacts">
-                  <Button size="lg">Оставить заявку</Button>
+                  <Button size="lg">{t('home.cta.button')}</Button>
                 </Link>
               </div>
             </div>

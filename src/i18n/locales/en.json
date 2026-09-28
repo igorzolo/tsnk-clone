@@ -25,10 +25,60 @@
     "productsDetectors": "Detectors",
     "productsMobile": "Mobile complexes",
     "contacts": "Contacts",
+    "address": "Moscow, Primernaya st., 1",
     "copyright": "© {{year}} TSNK. Educational clone. All rights to the original belong to LLC «Diagnostika-M»."
   },
   "language": {
     "ru": "Рус",
     "en": "Eng"
+  },
+  "categories": {
+    "introscope": "X-ray scanners",
+    "detector": "Detectors",
+    "mobile": "Mobile complexes",
+    "radar": "Radars",
+    "all": "All"
+  },
+  "home": {
+  "hero": {
+    "badge": "Russian production",
+    "titleLine1": "Inspection equipment",
+    "titleLine2": "of a new generation",
+    "subtitle": "Security systems for transport, industry and government facilities. In-house development, full production cycle, service across Russia.",
+    "ctaPrimary": "Equipment catalog",
+    "ctaSecondary": "Contact us"
+  },
+  "advantages": {
+    "productionTitle": "In-house production",
+    "productionText": "Full development and assembly cycle in Russia.",
+    "techTitle": "Modern technologies",
+    "techText": "AI, machine learning, digital signal processing.",
+    "certTitle": "Certification",
+    "certText": "Compliance with international security standards."
+  },
+  "equipment": {
+    "title": "Equipment",
+    "subtitle": "A complete line of inspection systems for any task."
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "What's new in the company and the industry."
+  },
+  "cta": {
+    "title": "Need a consultation?",
+    "subtitle": "We'll select equipment for your needs and calculate delivery cost.",
+    "button": "Request a quote"
   }
+},
+  "equipment": {
+    "title": "Equipment",
+    "subtitle": "A complete line of inspection systems for transport, industry and government facilities.",
+    "found": "Found",
+    "notFound": "Nothing found",
+    "notFoundText": "Try selecting a different category or resetting the filter."
+  },
+    "seo": {
+    "siteName": "TSNK",
+    "defaultDescription": "Russian manufacturer of inspection equipment. Security systems for transport, industry and government facilities."
+    }
 }

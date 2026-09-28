@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li>+7 (000) 000-00-00</li>
               <li>info@tsnk.ru</li>
-              <li>Москва, ул. Примерная, 1</li>
+              <li>{t('footer.address')}</li>
             </ul>
           </div>
         </div>

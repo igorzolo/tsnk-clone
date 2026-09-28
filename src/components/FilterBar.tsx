@@ -1,5 +1,6 @@
+import { useTranslation } from 'react-i18next';
 import { cn } from '../lib/cn';
-import { CATEGORY_LABELS, type ProductCategory } from '../types';
+import type { ProductCategory } from '../types';
 
 type Filter = ProductCategory | 'all';
 
@@ -12,10 +13,12 @@ type Props = {
 const FILTERS: Filter[] = ['all', 'introscope', 'detector', 'mobile', 'radar'];
 
 export default function FilterBar({ active, onChange, counts }: Props) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-wrap gap-2">
       {FILTERS.map((f) => {
-        const label = f === 'all' ? 'Все' : CATEGORY_LABELS[f];
+        const label = t(`categories.${f}`);
         const isActive = active === f;
         return (
           <button

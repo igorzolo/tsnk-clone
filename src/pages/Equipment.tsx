@@ -1,18 +1,21 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { SearchX } from 'lucide-react';
 import Container from '../components/ui/Container';
 import SectionTitle from '../components/ui/SectionTitle';
 import FilterBar from '../components/FilterBar';
 import ProductCard from '../components/ProductCard';
-import { products } from '../mocks/data/products';
-import type { ProductCategory } from '../types';
 import FadeIn from '../components/ui/FadeIn';
 import Seo from '../components/Seo';
+import { useProducts } from '../hooks/useProducts';
+import type { ProductCategory } from '../types';
 
 type Filter = ProductCategory | 'all';
 
 export default function Equipment() {
+  const { t } = useTranslation();
+  const products = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
   const rawCategory = searchParams.get('category');
   const active: Filter =
@@ -32,12 +35,12 @@ export default function Equipment() {
       base[p.category] += 1;
     });
     return base;
-  }, []);
+  }, [products]);
 
   const filtered = useMemo(() => {
     if (active === 'all') return products;
     return products.filter((p) => p.category === active);
-  }, [active]);
+  }, [active, products]);
 
   const handleChange = (value: Filter) => {
     if (value === 'all') {
@@ -50,13 +53,13 @@ export default function Equipment() {
   return (
     <>
       <Seo
-        title="Каталог оборудования"
-        description="Полная линейка досмотровых систем: интроскопы, детекторы следов, мобильные комплексы, радары. Подбор под задачу, поставка по всей России."
+        title={t('equipment.title')}
+        description={t('equipment.subtitle')}
       />
       <Container className="py-12 sm:py-16">
         <SectionTitle
-          title="Оборудование"
-          subtitle="Полная линейка досмотровых систем для транспорта, промышленности и государственных объектов."
+          title={t('equipment.title')}
+          subtitle={t('equipment.subtitle')}
         />
 
         <div className="mt-8">
@@ -64,7 +67,8 @@ export default function Equipment() {
         </div>
 
         <p className="mt-6 text-sm text-slate-500">
-          Найдено: <span className="font-semibold text-slate-900">{filtered.length}</span>
+          {t('equipment.found')}:{' '}
+          <span className="font-semibold text-slate-900">{filtered.length}</span>
         </p>
 
         {filtered.length > 0 ? (
@@ -80,9 +84,11 @@ export default function Equipment() {
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 text-slate-400">
               <SearchX size={26} />
             </div>
-            <h3 className="text-lg font-semibold text-slate-900">Ничего не найдено</h3>
+            <h3 className="text-lg font-semibold text-slate-900">
+              {t('equipment.notFound')}
+            </h3>
             <p className="max-w-sm text-sm text-slate-500">
-              Попробуйте выбрать другую категорию или сбросить фильтр.
+              {t('equipment.notFoundText')}
             </p>
           </div>
         )}
