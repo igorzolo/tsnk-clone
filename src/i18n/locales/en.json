@@ -127,5 +127,57 @@
         "messageMin": "Message must be at least 10 characters",
         "messageMax": "Message is too long"
     }
+    },
+    "about": {
+    "badge": "About us",
+    "title": "Russian manufacturer of security systems",
+    "subtitle": "Full cycle of development, production and service of inspection equipment. Operating since 2010.",
+    "stats": {
+        "years": "years on the market",
+        "systems": "installed systems",
+        "regions": "delivery regions",
+        "employees": "employees"
+    },
+    "history": {
+        "title": "Our history",
+        "p1": "The company was founded in 2010 by a group of engineers united by the idea of creating domestic inspection equipment that matches global counterparts in accuracy and reliability.",
+        "p2": "Over 15 years, we've grown from a small laboratory into a full-fledged manufacturing enterprise with our own design bureau, testing center, and service network across Russia.",
+        "p3": "Today our equipment operates in airports, railway stations, industrial complexes, and government facilities throughout the country."
+    },
+    "mission": {
+        "title": "Our mission",
+        "p1": "We make complex technologies accessible for ensuring the safety of people and infrastructure. Our goal is for every facility that needs it to be equipped with modern inspection systems.",
+        "p2": "We believe security should not be a compromise between quality, price, and convenience. That's why we develop equipment that solves all three tasks at once."
+    },
+    "values": {
+        "title": "Our values",
+        "subtitle": "The principles we follow every day.",
+        "accuracyTitle": "Accuracy",
+        "accuracyText": "Engineering approach and quality control at every stage of production.",
+        "reliabilityTitle": "Reliability",
+        "reliabilityText": "Equipment operates in the most demanding conditions.",
+        "innovationTitle": "Innovation",
+        "innovationText": "In-house research in radar and signal processing.",
+        "partnershipTitle": "Partnership",
+        "partnershipText": "Long-term relationships with clients and full service after delivery."
+    },
+    "production": {
+        "title": "In-house full-cycle production",
+        "subtitle": "All key components — radiation generators, detectors, signal processing systems, and software — are developed and manufactured at our facility.",
+        "item1": "Design bureau and R&D lab",
+        "item2": "In-house testing center",
+        "item3": "Service across Russia",
+        "item4": "Certification to international standards"
+    },
+    "cta": {
+        "title": "Let's discuss your project",
+        "subtitle": "Tell us about your task — we'll select equipment and calculate the cost.",
+        "button": "Contact us"
+    }
+    },
+    "notFound": {
+    "title": "404",
+    "text": "Page not found",
+    "backHome": "Back to home"
     }
 }
