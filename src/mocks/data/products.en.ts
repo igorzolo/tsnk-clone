@@ -10,7 +10,7 @@ export const products: Product[] = [
       'X-ray inspection system for luggage and hand baggage.',
     fullDescription:
       'TS-SCAN 6575 is the flagship X-ray scanner for inspecting luggage and hand baggage at high-traffic facilities. Dual scanning and intelligent image processing algorithms help operators identify prohibited items faster and more accurately. The system is certified and supplied to airports, railway stations and government facilities.',
-    image: '/images/products/ts-scan-6575.svg',
+    image: '/images/products/ts-scan-6575.jpg',
     features: [
       'Tunnel 650×750 mm',
       'Up to 1800 items per hour',
@@ -62,7 +62,7 @@ export const products: Product[] = [
       'Mobile inspection system for vehicles.',
     fullDescription:
       'MIDK 9032 is a mobile inspection system mounted on a truck chassis. It scans cargo and passenger vehicles on the move, which is critical for checkpoints and large logistics hubs. Provides penetration up to 300 mm of steel and record inspection speed.',
-    image: '/images/products/midk-9032.svg',
+    image: '/images/products/midk-9032.jpg',
     features: [
       'Penetration up to 300 mm',
       'Scanning on the move up to 5 km/h',
@@ -88,7 +88,7 @@ export const products: Product[] = [
       'Radar system for detecting hidden objects.',
     fullDescription:
       'Radar-IQ is a next-generation radar system for detecting hidden objects behind walls, in clothing and in packaging. It uses machine learning to recognize the shape and material of objects. Used in perimeter security, tactical entry, and checkpoints.',
-    image: '/images/products/radar-iq.svg',
+    image: '/images/products/radar-iq.jpg',
     features: [
       'Detection range up to 30 m',
       'Works through walls and partitions',

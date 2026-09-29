@@ -24,32 +24,59 @@ export default function Home() {
       />
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
-        <Container className="py-20 sm:py-28">
+      <section className="relative overflow-hidden">
+        {/* Карта на фоне */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
+          aria-hidden="true"
+        />
+
+        <Container className="relative py-20 sm:py-28">
           <FadeIn>
-            <div className="mx-auto max-w-3xl text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-medium text-brand-700">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-                {t('home.hero.badge')}
-              </span>
-              <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                {t('home.hero.titleLine1')}{' '}
-                <span className="text-brand-600">{t('home.hero.titleLine2')}</span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-                {t('home.hero.subtitle')}
-              </p>
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <Link to="/equipment">
-                  <Button size="lg">
-                    {t('home.hero.ctaPrimary')} <ArrowRight size={18} />
-                  </Button>
-                </Link>
-                <Link to="/contacts">
-                  <Button size="lg" variant="outline">
-                    {t('home.hero.ctaSecondary')}
-                  </Button>
-                </Link>
+            <div className="mx-auto max-w-3xl">
+              {/* Стеклянная карточка */}
+              <div
+                className="relative rounded-3xl border border-white/40 bg-white/30 p-8 shadow-2xl backdrop-blur-xl sm:p-12"
+                style={{
+                  boxShadow:
+                    '0 8px 32px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255,255,255,0.6)',
+                }}
+              >
+                {/* Мягкий блик сверху */}
+                <div
+                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent"
+                  aria-hidden="true"
+                />
+
+                <div className="text-center">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 px-3 py-1 text-xs font-medium text-brand-700 backdrop-blur-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+                    {t('home.hero.badge')}
+                  </span>
+
+                  <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                    {t('home.hero.titleLine1')}{' '}
+                    <span className="text-brand-600">{t('home.hero.titleLine2')}</span>
+                  </h1>
+
+                  <p className="mx-auto mt-6 max-w-2xl text-lg font-medium leading-relaxed text-slate-800">
+                    {t('home.hero.subtitle')}
+                  </p>
+
+                  <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                    <Link to="/equipment">
+                      <Button size="lg">
+                        {t('home.hero.ctaPrimary')} <ArrowRight size={18} />
+                      </Button>
+                    </Link>
+                    <Link to="/contacts">
+                      <Button size="lg" variant="outline" className="bg-white/60 backdrop-blur-sm">
+                        {t('home.hero.ctaSecondary')}
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </FadeIn>
