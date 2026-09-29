@@ -138,7 +138,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {products.map((p, i) => (
+              {products.slice(0, 4).map((p, i) => (
                 <FadeIn key={p.id} delay={i * 0.08}>
                   <ProductCard product={p} />
                 </FadeIn>

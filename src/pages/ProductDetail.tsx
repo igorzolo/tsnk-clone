@@ -53,7 +53,7 @@ export default function ProductDetail() {
         />
 
         <div className="mt-8 grid gap-10 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+          <div className="self-start overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
             <img
               src={product.image}
               alt={product.name}
