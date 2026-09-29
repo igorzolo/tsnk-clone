@@ -109,17 +109,25 @@ export default function ProductDetail() {
               {t('product.specs')}
             </h2>
             <dl className="mt-5 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
-              {product.specs.map((s) => (
+                {product.specs.map((s) => (
                 <div
-                  key={s.label}
-                  className="flex justify-between gap-6 px-5 py-3"
+                    key={s.label}
+                    className="flex flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
                 >
-                  <dt className="text-sm text-slate-500">{s.label}</dt>
-                  <dd className="text-right text-sm font-medium text-slate-900">
-                    {s.value}
-                  </dd>
+                    <dt className="text-sm text-slate-500 sm:shrink-0">{s.label}</dt>
+                    <dd className="text-sm font-medium text-slate-900 sm:text-right">
+                    {Array.isArray(s.value) ? (
+                        <div className="flex flex-col gap-1">
+                        {s.value.map((line) => (
+                            <span key={line}>{line}</span>
+                        ))}
+                        </div>
+                    ) : (
+                        s.value
+                    )}
+                    </dd>
                 </div>
-              ))}
+                ))}
             </dl>
           </div>
         </div>

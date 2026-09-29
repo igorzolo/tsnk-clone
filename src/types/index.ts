@@ -9,7 +9,7 @@ export type Product = {
   fullDescription: string;
   image: string;
   features: string[];
-  specs: { label: string; value: string }[];
+  specs: { label: string; value: string | string[] }[];
 };
 
 export type NewsItem = {
