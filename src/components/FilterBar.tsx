@@ -10,7 +10,7 @@ type Props = {
   counts: Record<Filter, number>;
 };
 
-const FILTERS: Filter[] = ['all', 'introscope', 'detector', 'mobile', 'radar'];
+const FILTERS: Filter[] = ['all', 'introscope', 'detector', 'mobile', 'radar', 'xray', 'medicine'];
 
 export default function FilterBar({ active, onChange, counts }: Props) {
   const { t } = useTranslation();

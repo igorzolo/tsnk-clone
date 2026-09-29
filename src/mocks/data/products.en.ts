@@ -104,5 +104,57 @@ export const products: Product[] = [
       { label: 'Weight', value: '4.2 kg' },
       { label: 'Operating temperature', value: '−20…+55 °C' },
     ],
+    },
+    {
+    id: '5',
+    slug: 'jaguar',
+    name: 'Jaguar',
+    category: 'xray',
+    shortDescription:
+        'Multifunctional X-ray system for tomographic inspection.',
+    fullDescription:
+        'The Jaguar X-ray system is designed for tomographic inspection of objects with high spatial resolution and the ability to visualize their internal structure in 3D. The 3D model helps detect cracks, determine the dimensions, shape of discontinuities and foreign inclusions, as well as their exact location.\n\nProprietary software uses projection data for 3D visualization, ensuring high efficiency and quality of object analysis with image detail down to 5 microns.',
+    image: '/images/products/jaguar.jpg',
+    features: [
+        'Control of inspection parameters',
+        'Export results to TIFF, BMP, JPG',
+        'Measurement of linear object parameters',
+        'Adjustable histogram of the inspection area',
+        '3D model creation via rendering',
+    ],
+    specs: [
+        { label: 'Anode voltage adjustment range', value: 'from 50 to 130 kV' },
+        { label: 'Rated anode current', value: '0.1 mA' },
+        { label: 'Rated effective focal spot size', value: 'no more than 50 microns' },
+        { label: 'Power supply', value: '220 V' },
+        { label: 'Weight', value: 'no more than 400 kg' },
+        { label: 'Maximum resolution', value: '5 microns' },
+    ],
+    },
+    {
+    id: '6',
+    slug: 'miran-b',
+    name: 'Miran B',
+    category: 'medicine',
+    shortDescription:
+      'Portable medical X-ray diagnostic apparatus "Miran B"',
+    fullDescription:
+      'The small-sized MIRAN X-ray diagnostic apparatus is intended for performing radiography in non-specialized conditions, including in hospital wards, at home for patients with limited mobility, in feldsher-midwife stations, in emergency situations, in military field hospitals, and in cold climate conditions.\n\nThe apparatus is supplied in a hard case (Version A) with a fixed focal length, and in a lightweight version (Version B) on a telescopic stand. The assembly and preparation time for operation is 3 minutes. Power from its own batteries is provided; chargers are available for AC mains (AC 230 V) and for a car electrical system.',
+    image: '/images/products/miran-b.png',
+    features: [
+      'control of examination parameters',
+      'import of results in TIFF, BMP, JPG',
+      'measurement of linear parameters of objects',
+      'ability to modify the histogram of the examination area',
+      'standalone operation without mains power',
+    ],
+    specs: [
+      { label: 'Anode voltage adjustment range', value: 'from 50 to 100 kV' },
+      { label: 'Nominal anode current', value: '1 mA' },
+      { label: 'Nominal effective focal spot size', value: 'no more than 500 µm' },
+      { label: 'Power supply', value: '24 V' },
+      { label: 'Weight', value: 'no more than 25 kg' },
+      { label: 'Maximum resolution', value: '3.4 lp/mm' },
+    ],
   },
 ];

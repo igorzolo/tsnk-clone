@@ -19,7 +19,7 @@ export default function Equipment() {
   const [searchParams, setSearchParams] = useSearchParams();
   const rawCategory = searchParams.get('category');
   const active: Filter =
-    rawCategory && ['introscope', 'detector', 'mobile', 'radar'].includes(rawCategory)
+    rawCategory && ['introscope', 'detector', 'mobile', 'radar', 'xray', 'medicine'].includes(rawCategory)
       ? (rawCategory as ProductCategory)
       : 'all';
 
@@ -30,6 +30,8 @@ export default function Equipment() {
       detector: 0,
       mobile: 0,
       radar: 0,
+      xray: 0,
+      medicine: 0,
     };
     products.forEach((p) => {
       base[p.category] += 1;

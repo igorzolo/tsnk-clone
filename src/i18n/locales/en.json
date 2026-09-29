@@ -37,6 +37,8 @@
     "detector": "Detectors",
     "mobile": "Mobile complexes",
     "radar": "Radars",
+    "xray": "X-ray machines",
+    "medicine": "Medical equipment",
     "all": "All"
   },
   "home": {
@@ -77,6 +79,17 @@
     "notFound": "Nothing found",
     "notFoundText": "Try selecting a different category or resetting the filter."
   },
+  "product": {
+    "notFound": "Product not found",
+    "notFoundText": "The link may be outdated or the product was removed from the catalog.",
+    "keyFeatures": "Key features",
+    "specs": "Technical specifications",
+    "related": "Related products",
+    "request": "Request a quote",
+    "backToCatalog": "Back to catalog",
+    "breadcrumbHome": "Home",
+    "breadcrumbEquipment": "Equipment"
+    },
     "seo": {
     "siteName": "TSNK",
     "defaultDescription": "Russian manufacturer of inspection equipment. Security systems for transport, industry and government facilities."

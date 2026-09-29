@@ -1,4 +1,4 @@
-export type ProductCategory = 'introscope' | 'detector' | 'mobile' | 'radar';
+export type ProductCategory = 'introscope' | 'detector' | 'mobile' | 'radar' | 'xray' | 'medicine';
 
 export type Product = {
   id: string;
