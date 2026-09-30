@@ -24,6 +24,9 @@
     "productsIntroscopes": "X-ray scanners",
     "productsDetectors": "Detectors",
     "productsMobile": "Mobile complexes",
+    "productsRadar": "Radars",
+    "productsXray": "X-ray machines",
+    "productsMedicine": "Medical equipment",
     "contacts": "Contacts",
     "address": "Moscow, Primernaya st., 1",
     "copyright": "© {{year}} TSNK. Educational clone. All rights to the original belong to LLC «Diagnostika-M»."
@@ -65,6 +68,10 @@
   "news": {
     "title": "News",
     "subtitle": "What's new in the company and the industry."
+  },
+    "partners": {
+    "title": "Our partners",
+    "subtitle": "Companies that trust our equipment"
   },
   "cta": {
     "title": "Need a consultation?",

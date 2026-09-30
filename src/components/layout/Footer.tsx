@@ -1,6 +1,7 @@
 import Container from '../ui/Container';
 import { useTranslation } from 'react-i18next';
 import Logo from '../ui/Logo';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -31,9 +32,36 @@ export default function Footer() {
               {t('footer.products')}
             </h2>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
-              <li><a href="/equipment" className="hover:text-brand-600">{t('footer.productsIntroscopes')}</a></li>
-              <li><a href="/equipment" className="hover:text-brand-600">{t('footer.productsDetectors')}</a></li>
-              <li><a href="/equipment" className="hover:text-brand-600">{t('footer.productsMobile')}</a></li>
+              <li>
+                <Link to="/equipment?category=introscope" className="transition-colors hover:text-brand-600">
+                  {t('footer.productsIntroscopes')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/equipment?category=detector" className="transition-colors hover:text-brand-600">
+                  {t('footer.productsDetectors')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/equipment?category=mobile" className="transition-colors hover:text-brand-600">
+                  {t('footer.productsMobile')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/equipment?category=radar" className="transition-colors hover:text-brand-600">
+                  {t('footer.productsRadar')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/equipment?category=xray" className="transition-colors hover:text-brand-600">
+                  {t('footer.productsXray')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/equipment?category=medicine" className="transition-colors hover:text-brand-600">
+                  {t('footer.productsMedicine')}
+                </Link>
+              </li>
             </ul>
           </div>
 

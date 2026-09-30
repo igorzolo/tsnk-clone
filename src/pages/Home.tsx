@@ -10,6 +10,7 @@ import { useNews } from '../hooks/useNews';
 import FadeIn from '../components/ui/FadeIn';
 import Seo from '../components/Seo';
 import { useTranslation } from 'react-i18next';
+import { partners } from '../mocks/data/partners';
 
 export default function Home() {
   const products = useProducts();
@@ -173,6 +174,37 @@ export default function Home() {
               ))}
             </div>
           </FadeIn>
+        </Container>
+      </section>
+
+      {/* ПАРТНЁРЫ */}
+      <section className="border-t border-slate-100 bg-white">
+        <Container className="py-16">
+          <SectionTitle
+            title={t('home.partners.title')}
+            subtitle={t('home.partners.subtitle')}
+            align="center"
+          />
+
+          <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-12">
+            {partners.map((partner) => (
+              <a
+                key={partner.id}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={partner.name}
+                className="flex h-24 items-center justify-center sm:h-28"
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-h-full max-w-full object-contain opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+                  loading="lazy"
+                />
+              </a>
+            ))}
+          </div>
         </Container>
       </section>
 
